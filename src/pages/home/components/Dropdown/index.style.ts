@@ -16,9 +16,9 @@ export const ToggleButton = styled.button`
   border-radius: 10px;
 
   @media screen and (max-width: 450px) {
-    padding: 8px;
-    width: 92px;
-    font-size: 13px;
+    padding: 8px 4px;
+    width: 100px;
+    font-size: 12px;
   }
 `
 
