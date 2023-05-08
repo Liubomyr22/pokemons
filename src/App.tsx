@@ -4,7 +4,7 @@ import Home from "./pages/home"
 
 const App: React.FC = (): JSX.Element =>
   <Routes>
-    <Route index element={<Home />} />
+    <Route path='/pokemons' element={<Home />} />
   </Routes>
 
 export default App
