@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const DropdownContainer = styled.div`
   position: relative;
-  display: inline-block;
+  display: flex;
 `
 
 export const ToggleButton = styled.button`
@@ -16,9 +16,9 @@ export const ToggleButton = styled.button`
   border-radius: 10px;
 
   @media screen and (max-width: 450px) {
-    padding: 10px 8px;
-    width: 90px;
-    font-size: 14px;
+    padding: 8px;
+    width: 92px;
+    font-size: 13px;
   }
 `
 

@@ -119,7 +119,7 @@ Error generating stack: `+l.message+`
   }
 
   @media screen and (max-width: 500px) {
-    width: 80vw;
+    width: 70vw;
   }
 `,N1=({isOpen:e,onClose:t,children:n})=>{const r=E.useRef(null),o=l=>{r.current&&!r.current.contains(l.target)&&t()};return j.jsx(j.Fragment,{children:e&&j.jsx(C1,{onClick:o,children:j.jsxs(_1,{ref:r,open:!0,children:[j.jsx(P1,{children:j.jsx(T1,{onClick:t,children:"Close"})}),j.jsx($1,{children:n})]})})})};function R1(){const[e,t]=E.useState([]),[n,r]=E.useState([]),[o,l]=E.useState(0),[i,u]=E.useState(0),[s,a]=E.useState(!1),[p,h]=E.useState(""),m=()=>{h(""),u(v=>v+12)},y=E.useMemo(()=>o-12<i||s,[s,i,o]);return E.useEffect(()=>{let v=!1;return(async()=>{a(!0);const x=await fetch(`https://pokeapi.co/api/v2/pokemon?offset=${i}&limit=12`).then(f=>f.json()).catch(f=>le.error(f.message));Promise.all(x.results.map(async f=>await fetch(f.url).then(c=>c.json()))).then(async f=>{if(!v){const c=f.map(({name:d,weight:w,sprites:k,types:T,id:N,moves:_,stats:M})=>({name:d,id:N,front_default:k.front_default,types:T.map(z=>z.type.name),Type:T.map(z=>z.type.name)[0],Attack:M.find(z=>z.stat.name==="attack").base_stat,Defense:M.find(z=>z.stat.name==="defense").base_stat,HP:M.find(z=>z.stat.name==="hp").base_stat,["SP Attack"]:M.find(z=>z.stat.name==="special-attack").base_stat,["SP Defense"]:M.find(z=>z.stat.name==="special-defense").base_stat,Speed:M.find(z=>z.stat.name==="speed").base_stat,Weight:w,["Total moves"]:_.length}));await new Promise(d=>setTimeout(d,1e3)),t(d=>[...d,...c]),r(d=>[...d,...c]),l(x.count),a(!1)}}).catch(f=>le.error(f.message))})(),()=>{v=!0}},[i]),E.useEffect(()=>{t(n),t(p!==""?v=>v.filter(g=>g.types.includes(p)):n)},[p,n]),{pokemons:e,pokemonsCopy:n,isDisableloadMoreButton:y,isLoading:s,selectedPokemonType:p,loadMore:m,setSelectedPokemonType:h}}function L1(){const[e,t]=E.useState({width:window.innerWidth,height:window.innerHeight});return E.useEffect(()=>{const n=()=>{t({width:window.innerWidth,height:window.innerHeight})};return window.addEventListener("resize",n),()=>window.removeEventListener("resize",n)},[]),e}const z1=e=>{switch(e){case"bug":return"green";case"grass":return"lightgreen";case"fire":return"red";case"water":return"blue";case"electric":return"yellow";case"poison":return"purple";case"ground":return"brown";default:return"gray"}},O1=ee.span`
   color: black;
@@ -227,6 +227,10 @@ Error generating stack: `+l.message+`
   border: 1px solid black;
   padding: 2px;
   text-align: center;
+
+  @media screen and (max-width: 450px) {
+    font-size: 13px;
+  }
 `,H1=({pokemon:e})=>{const{id:t,name:n,front_default:r,types:o,...l}=e;return j.jsx("table",{children:j.jsx("tbody",{children:Object.entries(l).map(([i,u])=>j.jsxs("tr",{children:[j.jsx(pc,{children:i}),j.jsx(pc,{children:u})]},i))})})},Q1=ee.aside`
   position: relative;
   width: 100%;
@@ -352,7 +356,7 @@ Error generating stack: `+l.message+`
   text-align: center;
 `;function nv(){const[e,t]=E.useState([]),[n,r]=E.useState(!0);return E.useEffect(()=>{(async()=>{r(!0);const i=(await fetch("https://pokeapi.co/api/v2/type").then(u=>u.json()).catch(u=>le.error(u.message))).results.map(u=>u.name);t(i),r(!1)})()},[]),{types:e,isLoading:n}}const rv=ee.div`
   position: relative;
-  display: inline-block;
+  display: flex;
 `,ov=ee.button`
   padding: 8px 16px;
   font-size: 16px;
@@ -364,9 +368,9 @@ Error generating stack: `+l.message+`
   border-radius: 10px;
 
   @media screen and (max-width: 450px) {
-    padding: 10px 8px;
-    width: 90px;
-    font-size: 14px;
+    padding: 8px;
+    width: 92px;
+    font-size: 13px;
   }
 `,lv=ee.ul`
   position: absolute;

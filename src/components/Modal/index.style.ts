@@ -45,6 +45,6 @@ export const ChildrenWrapper = styled.div`
   }
 
   @media screen and (max-width: 500px) {
-    width: 80vw;
+    width: 70vw;
   }
 `
